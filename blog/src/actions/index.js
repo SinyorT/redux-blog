@@ -1,5 +1,6 @@
 export const fetchPostList=()=>{
     return {
-        type:'FETCH_POST_LIST'
+        type:'FETCH_POST_LIST',
+        payload:[]
     }
 }
