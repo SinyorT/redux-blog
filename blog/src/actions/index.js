@@ -9,7 +9,7 @@ export const fetchPostList = () => {
 
         dispatch( {
             type: 'FETCH_POST_LIST',
-            payload: response
+            payload: response.data
         });
 
     }
