@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPostList } from '../actions';
+import { fetchPostList,fetchUserList } from '../actions';
 import './postList.css';
 class PostList extends Component {
 
     componentDidMount() {
         this.props.fetchPostList();
+        this.props.fetchUserList();
     }
 
     renderItem(post) {
@@ -22,7 +23,7 @@ class PostList extends Component {
 
     render() {
         return (
-            <div className="ui list">
+            <div className="post-list ui list">
                 {this.props.postList.map(post => this.renderItem(post))}
             </div>
         )
@@ -31,9 +32,11 @@ class PostList extends Component {
 }
 const mapStateToProps = (state) => {
     console.log(state.postList);
+    console.log(state.userList);
     return {
-        postList: state.postList
+        postList: state.postList,
+        userList:state.userList
     }
 }
 
-export default connect(mapStateToProps, { fetchPostList })(PostList);
+export default connect(mapStateToProps, { fetchPostList,fetchUserList })(PostList);
