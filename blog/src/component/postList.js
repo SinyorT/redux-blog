@@ -32,7 +32,7 @@ class PostList extends Component {
                 <div className="content">
                     <div className="header">{post.title}</div>
                     <div className="description">{post.body}</div>
-                    <div className="description">{this.findUserName(post.userId)}</div>
+                    <div className="header">{this.findUserName(post.userId)}</div>
                 </div>
             </div>
         )
