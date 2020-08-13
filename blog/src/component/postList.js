@@ -18,6 +18,7 @@ class PostList extends Component{
     }
 }
 const mapStateToProps = (state)=>{
+    console.log(state.postList);
     return {
         postList:state.postList
     }
